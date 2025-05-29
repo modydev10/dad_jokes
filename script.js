@@ -5,9 +5,9 @@ let jokeSpan = document.getElementById('joke-span')
 
 
 async function getJoke() {
+
   let data = await fetch(url, {
     headers: {
-      // 'Accept': 'application/json'
       'accept': "application/json"
     }
   });
@@ -15,6 +15,26 @@ async function getJoke() {
   jokeSpan.textContent = result.joke;
 }
 
-btn.addEventListener('click', getJoke)
 
-window.addEventListener('load', getJoke)
+window.addEventListener('load', async () => {
+  let intervalId = setInterval(() => {
+    jokeSpan.textContent += '.';
+    if (jokeSpan.textContent.length >= 15) {
+      jokeSpan.textContent = 'Loading...'
+    }
+  }, 1000);
+
+  await getJoke();
+  clearInterval(intervalId);
+  btn.addEventListener('click', async () => {
+    jokeSpan.textContent = 'Loading...';
+    let intervalId = setInterval(() => {
+      jokeSpan.textContent += '.';
+      if (jokeSpan.textContent.length >= 15) {
+        jokeSpan.textContent = 'Loading...'
+      }
+    }, 1000);
+    await getJoke()
+    clearInterval(intervalId);
+  })
+})
