@@ -1,0 +1,55 @@
+/* @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans+Condensed:300,700'); */
+
+/* body {
+    background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/308367/halftone-yellow.png');
+    background:rgb(228, 17, 101);
+    font-family: sans-serif;
+    height: 3000px;
+} */
+
+
+* {
+    box-sizing: border-box;
+    font-family: 'tahoma', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+.container {
+    width: 60vw;
+    height: 50vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid #000;
+    border-radius: 0.5rem;
+    background: #ffd500;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.container button {
+    width: 130px;
+    height: 50px;
+    font-size: 1.5rem;
+    border-radius: 12px;
+    border: none;
+}
+
+.container button:hover {
+    background: #888;
+}
+.container button:active {
+    background: #bbb;
+}
+
+#joke-span {
+    font-size: 24px;
+}
