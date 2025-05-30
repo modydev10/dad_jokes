@@ -1,7 +1,7 @@
 let url = "https://icanhazdadjoke.com/"
 
 let btn = document.querySelector('.container button');
-let jokeSpan = document.getElementById('joke-span');
+let jokeSpan = document.getElementById('joke-span')
 
 
 async function getJoke() {
@@ -20,7 +20,7 @@ window.addEventListener('load', async () => {
   let intervalId = setInterval(() => {
     jokeSpan.textContent += '.';
     if (jokeSpan.textContent.length >= 15) {
-      jokeSpan.textContent = 'Loading';
+      jokeSpan.textContent = 'Loading'
     }
   }, 1000);
 
@@ -28,13 +28,13 @@ window.addEventListener('load', async () => {
   clearInterval(intervalId);
   btn.addEventListener('click', async () => {
     jokeSpan.textContent = 'Loading';
-    let intervalId = setInterval(() => {
+    let interval2 = setInterval(() => {
       jokeSpan.textContent += '.';
       if (jokeSpan.textContent.length >= 15) {
-        jokeSpan.textContent = 'Loading';
+        jokeSpan.textContent = 'Loading'
       }
     }, 1000);
-    await getJoke();
-    clearInterval(intervalId);
+    await getJoke()
+    clearInterval(interval2);
   })
 })
